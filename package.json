@@ -1,0 +1,23 @@
+{
+  "name": "ga-project-3",
+  "version": "1.0.0",
+  "description": "project-3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "npx nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliselarooy/ga-project-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eliselarooy/ga-project-3/issues"
+  },
+  "homepage": "https://github.com/eliselarooy/ga-project-3#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
