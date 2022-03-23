@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/eliselarooy/ga-project-3#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "express-mongo-sanitize": "^2.2.0",
     "nodemon": "^2.0.15"
   }
 }
