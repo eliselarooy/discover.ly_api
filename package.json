@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/eliselarooy/ga-project-3.git"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/eliselarooy/ga-project-3#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
   }
 }
