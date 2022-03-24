@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:server": "npx nodemon server.js"
+    "start:server": "npx nodemon server.js",
+    "seed": "node db/seed.js"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,13 @@
   },
   "homepage": "https://github.com/eliselarooy/ga-project-3#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-mongo-sanitize": "^2.2.0",
     "mongoose": "^6.2.8",
+    "mongoose-hidden": "^1.9.1",
+    "mongoose-unique-validator": "^3.0.0",
     "nodemon": "^2.0.15"
   }
 }

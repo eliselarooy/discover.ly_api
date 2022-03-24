@@ -1,4 +1,4 @@
-export const users = [
+export const usersData = [
   {
     username: 'user1',
     email: 'user1@email.com',
@@ -6,7 +6,7 @@ export const users = [
   },
 ];
 
-export const spots = [
+export const spotsData = [
   {
     title: 'Kayaking the River Ouse from Barcombe Mills',
     description:
@@ -14,6 +14,6 @@ export const spots = [
     location: 'Barcombe Mills, East Sussex',
     activity: 'Watersports',
     img: 'https://upload.wikimedia.org/wikipedia/commons/7/71/Waterway_Junctions%2C_Barcombe_Mills_-_geograph.org.uk_-_1413834.jpg',
-    createdBy: 'user1._id',
+    createdBy: 'users[0]._id',
   },
 ];
