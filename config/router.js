@@ -10,3 +10,11 @@ router
   .route('/spots')
   .get(spotsController.getAllSpots)
   .post(spotsController.createSpot);
+
+router
+  .route('/spots/:id')
+  .get(spotsController.getSpotById)
+  .put(spotsController.editSpot)
+  .delete(spotsController.deleteSpot);
+
+//routes for user profiles
