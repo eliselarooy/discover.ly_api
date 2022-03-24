@@ -14,6 +14,6 @@ export const spotsData = [
     location: 'Barcombe Mills, East Sussex',
     activity: 'Watersports',
     img: 'https://upload.wikimedia.org/wikipedia/commons/7/71/Waterway_Junctions%2C_Barcombe_Mills_-_geograph.org.uk_-_1413834.jpg',
-    createdBy: 'users[0]._id',
+    createdBy: '',
   },
 ];

@@ -1,4 +1,4 @@
-import Spot from '../models.spot.js';
+import Spot from '../models/spot.js';
 
 const createComment = async (req, res, next) => {
   try {
