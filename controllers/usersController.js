@@ -1,4 +1,19 @@
-import User from '../models/user';
+import User from '../models/user.js';
+
+async function getAllUsers(req, res, next) {
+  try {
+    const users = await User.find();
+    return res.status(200).json(users);
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function getUserById(req, res) {
+  const user = await User.findById(req.params.userId);
+
+  !user ? res.status(404) : res.status(200).json(user);
+}
 
 async function registerUser(req, res, next) {
   try {
@@ -40,6 +55,8 @@ async function loginUser(req, res, next) {
 }
 
 export default {
+  getAllUsers,
+  getUserById,
   registerUser,
   loginUser,
 };

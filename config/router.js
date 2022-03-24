@@ -12,7 +12,7 @@ router
   .post(spotsController.createSpot);
 
 router
-  .route('/spots/:id')
+  .route('/spots/:spotId')
   .get(spotsController.getSpotById)
   .put(spotsController.editSpot)
   .delete(spotsController.deleteSpot);
@@ -30,5 +30,9 @@ router.route('/register').post(usersController.registerUser);
 
 router.route('/login').post(usersController.loginUser);
 // routes for user profiles
+
+router.route('/users').get(usersController.getAllUsers);
+
+router.route('/users/:userId').get(usersController.getUserById);
 
 export default router;
