@@ -4,6 +4,7 @@ const spotSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
+    location: { type: String, required: true },
     activity: {
       type: String,
       enum: ['Running', 'Walking', 'Cycling', 'Swimming', 'Watersports'],
