@@ -17,4 +17,18 @@ router
   .put(spotsController.editSpot)
   .delete(spotsController.deleteSpot);
 
-//routes for user profiles
+router.route('/spots/:id/comments').post(commentsController.createComment);
+
+router.route('/spots/:id/comments/:commentId');
+
+router
+  .route('/spots/:id/comments/:commentId')
+  .delete(commentsController.deleteComment)
+  .put(commentsController.updateComment);
+
+router.route('/register').post(usersController.registerUser);
+
+router.route('/login').post(usersController.loginUser);
+// routes for user profiles
+
+export default router;
