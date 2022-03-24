@@ -15,7 +15,7 @@ async function seed() {
     const users = await User.create(usersData);
     console.log('Users added to database:', users);
 
-    spots.map((spot) => (spot.createdBy = users[0]._id));
+    spotsData.map((spot) => (spot.createdBy = users[0]._id));
 
     // Creatings spots
     const spots = await Spot.create(spotsData);
