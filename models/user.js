@@ -1,4 +1,4 @@
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 // import bcrypt from 'bcrypt';
 // import mongooseHidden from 'mongoose-hidden';
 // uniqueValidator from 'mongoose-unique-validator';
