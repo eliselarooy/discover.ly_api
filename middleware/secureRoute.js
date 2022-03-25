@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/user.js';
-import { secret } from '..config/environment.js';
+import { secret } from '../config/environment.js';
 
 const secureRoute = async (req, res, next) => {
   try {
@@ -32,6 +32,4 @@ const secureRoute = async (req, res, next) => {
   }
 };
 
-export default {
-  secureRoute,
-};
+export default secureRoute;

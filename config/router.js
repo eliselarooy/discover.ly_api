@@ -1,38 +1,41 @@
 import express from 'express';
+import secureRoute from '../middleware/secureRoute.js';
 
 import commentsController from '../controllers/commentsController.js';
 import spotsController from '../controllers/spotsController.js';
 import usersController from '../controllers/usersController.js';
+import likesController from '../controllers/likesController.js';
 
 const router = express.Router();
 
 router
   .route('/spots')
   .get(spotsController.getAllSpots)
-  .post(spotsController.createSpot);
+  .post(secureRoute, spotsController.createSpot); // logged in
 
 router
   .route('/spots/:spotId')
   .get(spotsController.getSpotById)
-  .put(spotsController.editSpot)
-  .delete(spotsController.deleteSpot);
+  .put(secureRoute, spotsController.editSpot) // users own
+  .delete(secureRoute, spotsController.deleteSpot); // users own
 
-router.route('/spots/:id/comments').post(commentsController.createComment);
-
-router.route('/spots/:id/comments/:commentId');
+router
+  .route('/spots/:id/comments')
+  .post(secureRoute, commentsController.createComment); // logged in
 
 router
   .route('/spots/:id/comments/:commentId')
-  .delete(commentsController.deleteComment)
-  .put(commentsController.updateComment);
+  .delete(secureRoute, commentsController.deleteComment) // users own
+  .put(secureRoute, commentsController.updateComment); // users own
 
 router.route('/register').post(usersController.registerUser);
 
 router.route('/login').post(usersController.loginUser);
-// routes for user profiles
 
 router.route('/users').get(usersController.getAllUsers);
 
 router.route('/users/:userId').get(usersController.getUserById);
+
+router.route('/spots/:id/likes').put(secureRoute, likesController.like);
 
 export default router;
