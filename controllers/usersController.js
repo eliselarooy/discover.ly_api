@@ -1,4 +1,6 @@
 import User from '../models/user.js';
+import jwt from 'jsonwebtoken';
+import { secret } from '../config/environment.js';
 
 async function getAllUsers(req, res, next) {
   try {
@@ -30,9 +32,9 @@ async function registerUser(req, res, next) {
 
 async function loginUser(req, res, next) {
   try {
-    const user = await User.findOne(
-      { email: req.body.email } || { username: req.body.email }
-    );
+    const user =
+      (await User.findOne({ email: req.body.email })) ||
+      (await User.findOne({ username: req.body.email }));
 
     if (!user) {
       return res.status(404).json({ message: 'Unauthorized: User not found' });
@@ -46,9 +48,11 @@ async function loginUser(req, res, next) {
         .json({ message: 'Unauthorized: Password incorrect' });
     }
 
-    // const token = jwt.sign({ userId: user._id }, secret, { expiresIn: '6h' });
+    const token = jwt.sign({ userId: user._id }, secret, { expiresIn: '6h' });
 
-    return res.status(202).send({ message: 'Login successful' });
+    console.log(token);
+
+    return res.status(202).send({ token, message: 'Login successful' });
   } catch (err) {
     next(err);
   }

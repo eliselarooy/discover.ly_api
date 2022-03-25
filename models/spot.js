@@ -22,6 +22,7 @@ const spotSchema = new mongoose.Schema(
     comments: [commentSchema],
     img: { type: String },
     createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+    likedBy: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
   },
   { timestamps: true }
 );

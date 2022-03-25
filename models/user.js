@@ -23,6 +23,7 @@ const userSchema = new mongoose.Schema({
         password
       ),
   },
+  likedSpots: [{ type: mongoose.Schema.ObjectId, ref: 'Spot' }],
 });
 
 userSchema.pre('save', function encryptPassword(next) {
