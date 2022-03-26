@@ -1,4 +1,5 @@
 import Spot from '../models/spot.js';
+import User from '../models/user.js';
 
 const like = async (req, res, next) => {
   try {
@@ -15,8 +16,18 @@ const like = async (req, res, next) => {
 
       const addedLike = await spot.save();
 
+      await User.updateMany(
+        { _id: spot.likedBy },
+        { $push: { likedSpots: spot._id } }
+      );
+
       return res.status(201).json({ message: 'Liked', addedLike });
     }
+
+    await User.updateMany(
+      { _id: spot.likedBy },
+      { $pull: { likedSpots: spot._id } }
+    );
 
     const index = spot.likedBy.indexOf(userId);
 
