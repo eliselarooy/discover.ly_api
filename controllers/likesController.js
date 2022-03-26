@@ -14,14 +14,14 @@ const like = async (req, res, next) => {
     if (!spot.likedBy.includes(req.currentUser._id)) {
       spot.likedBy.push(req.currentUser._id);
 
-      const addedLike = await spot.save();
+      const data = await spot.save();
 
       await User.updateMany(
         { _id: spot.likedBy },
         { $push: { likedSpots: spot._id } }
       );
 
-      return res.status(201).json({ message: 'Liked', addedLike });
+      return res.status(201).json({ message: 'Liked', data });
     }
 
     await User.updateMany(
@@ -33,9 +33,9 @@ const like = async (req, res, next) => {
 
     spot.likedBy.splice(index, 1);
 
-    const removedLike = await spot.save();
+    const data = await spot.save();
 
-    return res.status(200).json({ message: 'Removed like', removedLike });
+    return res.status(200).json({ message: 'Removed like', data });
   } catch (err) {
     next(err);
   }
