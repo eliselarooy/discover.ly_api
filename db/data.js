@@ -1,6 +1,7 @@
 export const usersData = [
   {
     username: 'user1',
+    profilePicture: 'src/assets/images/preset.jpg',
     email: 'user1@email.com',
     password: 'password!1',
   },
