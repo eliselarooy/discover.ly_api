@@ -20,7 +20,7 @@ async function getUserById(req, res) {
 async function registerUser(req, res, next) {
   try {
     if (req.body.password !== req.body.passwordConfirmation) {
-      return res.status(422).json({ message: 'Passwords do not match' });
+      return res.status(403).send({ message: 'Passwords do not match' });
     }
 
     const user = await User.create(req.body);
