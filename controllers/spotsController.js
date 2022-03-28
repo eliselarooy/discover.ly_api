@@ -14,8 +14,9 @@ const getSpotById = async (req, res) => {
 // !  Potential here for checking if spot already exists?
 // ! i.e: if (spot === (already created spot) {return res.status(404).send({ message: 'Spot already created: @spot})}
 const createSpot = async (req, res) => {
-  const spot = await Spot.create(req.body);
-  return res.status(401).send(201);
+  const userId = req.currentUser._id;
+  const spot = await Spot.create({ ...req.body, createdBy: userId });
+  return res.status(200).send(spot);
 };
 
 const editSpot = async (req, res) => {
@@ -26,7 +27,7 @@ const editSpot = async (req, res) => {
 };
 
 const deleteSpot = async (req, res) => {
-  const spot = Spot.findByIdAndDelete(req.params.id);
+  await Spot.findByIdAndDelete(req.params.id);
   return res
     .status(200)
     .json({ message: 'You deleted your spot!' + req.params.id });
