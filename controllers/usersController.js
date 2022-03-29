@@ -19,12 +19,40 @@ async function getUserById(req, res) {
 
 async function registerUser(req, res, next) {
   try {
-    if (req.body.password !== req.body.passwordConfirmation) {
-      return res.status(403).send({ message: 'Passwords do not match' });
+    const searchedUser = req.body.username;
+    console.log(searchedUser);
+    const users = await User.findOne({ username: searchedUser });
+    console.log(users);
+    if (!req.body.username) {
+      return res.status(203).send({ message: 'Username Required' });
+    } else if (users !== null) {
+      return res.status(203).send({ message: 'Username Already Exists' });
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(req.body.email)
+    ) {
+      return res.status(203).send({ message: 'Email Invalid' });
+    } else if (!req.body.email) {
+      return res.status(203).send({ message: 'Email Required' });
+    } else if (!req.body.password) {
+      return res.status(203).send({ message: 'Password Required' });
+    } else if (
+      !/(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
+        req.body.password
+      )
+    ) {
+      return res.status(203).send({
+        message:
+          'Password is not valid. Password must contain: 10 characters, 1 symbol and 1 number.',
+      });
+    } else if (!req.body.passwordConfirmation) {
+      return res
+        .status(203)
+        .send({ message: 'Password Confirmation Required' });
+    } else if (req.body.password !== req.body.passwordConfirmation) {
+      return res.status(203).send({ message: 'Passwords do not match' });
     }
-
     const user = await User.create(req.body);
-    return res.status(201).json(user);
+    return res.status(201).send({ message: 'success', user });
   } catch (err) {
     next(err);
   }

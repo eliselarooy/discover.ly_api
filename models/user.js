@@ -8,20 +8,20 @@ import { emailRegex } from '../lib/stringTesters.js';
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
-    required: [true, 'Username is required'],
+    required: true,
     unique: true,
   },
   profileImage: { type: String },
   location: { type: String },
   email: {
     type: String,
-    required: [true, 'Email is required'],
+    required: true,
     unique: true,
     validate: (email) => emailRegex.test(email),
   },
   password: {
     type: String,
-    required: [true, 'Password is required'],
+    required: true,
     validate: (password) =>
       /(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
         password
