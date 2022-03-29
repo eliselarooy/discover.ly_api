@@ -5,6 +5,7 @@ import commentsController from '../controllers/commentsController.js';
 import spotsController from '../controllers/spotsController.js';
 import usersController from '../controllers/usersController.js';
 import likesController from '../controllers/likesController.js';
+import search from '../controllers/search.js';
 
 const router = express.Router();
 
@@ -35,6 +36,8 @@ router.route('/login').post(usersController.loginUser);
 router.route('/users').get(usersController.getAllUsers);
 
 router.route('/users/:userId').get(usersController.getUserById);
+
+router.route('/search').post(search.searchSpots);
 
 router.route('/spots/:id/likes').put(secureRoute, likesController.like);
 

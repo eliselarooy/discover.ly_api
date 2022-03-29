@@ -13,7 +13,7 @@ const createComment = async (req, res, next) => {
     spot.comments.push(newComment);
     const savedSpot = await spot.save();
 
-    return res.status(201).send({ message: 'New spot created!' }, savedSpot);
+    return res.status(201).json({ message: 'New comment created!', savedSpot });
   } catch (err) {
     next(err);
   }

@@ -16,7 +16,7 @@ const getSpotById = async (req, res) => {
 const createSpot = async (req, res) => {
   const userId = req.currentUser._id;
   const spot = await Spot.create({ ...req.body, createdBy: userId });
-  return res.status(200).send(spot);
+  return res.status(200).json(spot);
 };
 
 const editSpot = async (req, res) => {
