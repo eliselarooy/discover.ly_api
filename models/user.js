@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema({
       ),
   },
   likedSpots: [{ type: mongoose.Schema.ObjectId, ref: 'Spot' }],
+  //profile infor: bio.
 });
 
 userSchema.pre('save', function encryptPassword(next) {
