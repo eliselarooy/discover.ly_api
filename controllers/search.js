@@ -14,9 +14,7 @@ const searchSpots = async (req, res, next) => {
       }
     });
 
-    results.length === 0
-      ? res.status(404).send({ message: 'No results' })
-      : res.status(200).json(results);
+    res.status(200).json(results);
   } catch (err) {
     next(err);
   }
