@@ -1,8 +1,17 @@
 import Spot from '../models/spot.js';
 
 const getAllSpots = async (req, res) => {
-  const spots = await Spot.find();
+  const spots = await Spot.find({});
   return res.status(200).json(spots);
+};
+
+const getAllSpotsForUser = async (req, res, next) => {
+  try {
+    const spots = await Spot.find({ createdBy: req.params.userId });
+    return res.status(200).json(spots);
+  } catch (err) {
+    next(err);
+  }
 };
 
 const getSpotById = async (req, res) => {
@@ -39,4 +48,5 @@ export default {
   createSpot,
   editSpot,
   deleteSpot,
+  getAllSpotsForUser,
 };

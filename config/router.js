@@ -14,6 +14,8 @@ router
   .get(spotsController.getAllSpots)
   .post(secureRoute, spotsController.createSpot); // logged in
 
+router.route('/spots/users/:userId').get(spotsController.getAllSpotsForUser);
+
 router
   .route('/spots/:spotId')
   .get(spotsController.getSpotById)
