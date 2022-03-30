@@ -11,10 +11,13 @@ async function getAllUsers(req, res, next) {
   }
 }
 
-async function getUserById(req, res) {
-  const user = await User.findById(req.params.userId);
-
-  !user ? res.status(404) : res.status(200).json(user);
+async function getUserById(req, res, next) {
+  try {
+    const user = await User.findById(req.params.userId);
+    !user ? res.status(404) : res.status(200).json(user);
+  } catch (err) {
+    next(err);
+  }
 }
 
 async function registerUser(req, res, next) {
@@ -60,27 +63,33 @@ async function registerUser(req, res, next) {
 
 async function loginUser(req, res, next) {
   try {
+    if (!req.body.email) {
+      return res.status(203).send({ message: 'Username or email required' });
+    }
+
+    if (!req.body.password) {
+      return res.status(203).send({ message: 'Password required' });
+    }
+
     const user =
       (await User.findOne({ email: req.body.email })) ||
       (await User.findOne({ username: req.body.email }));
 
     if (!user) {
-      return res.status(404).json({ message: 'Unauthorized: User not found' });
+      return res.status(203).send({ message: 'User not found' });
     }
 
     const isValidPassword = user.validatePassword(req.body.password);
 
     if (!isValidPassword) {
-      return res
-        .status(404)
-        .json({ message: 'Unauthorized: Password incorrect' });
+      return res.status(203).send({ message: 'Password incorrect' });
     }
 
     const token = jwt.sign({ userId: user._id }, secret, { expiresIn: '6h' });
 
     console.log(token);
 
-    return res.status(202).send({ token, message: 'Login successful' });
+    return res.status(202).send({ token, message: 'success' });
   } catch (err) {
     next(err);
   }

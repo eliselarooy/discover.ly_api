@@ -6,9 +6,7 @@ const searchSpots = async (req, res, next) => {
   const regex = new RegExp(searchText, 'i'); // i for case insensitive
 
   try {
-    const results = (
-      await Spot.find({ description: { $regex: regex } })
-    ).concat(await Spot.find({ title: { $regex: regex } }));
+    const results = await Spot.find({ title: { $regex: regex } });
 
     res.status(200).json(results);
   } catch (err) {
