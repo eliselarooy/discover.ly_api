@@ -13,7 +13,9 @@ const spotSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
-    location: { type: String, required: false },
+    location: { type: String, required: true },
+    lattitude: { type: Number, required: true },
+    longitude: { type: Number, required: true },
     activity: {
       type: String,
       enum: ['Running', 'Walking', 'Cycling', 'Swimming', 'Watersports'],

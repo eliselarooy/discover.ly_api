@@ -37,7 +37,7 @@ router.route('/users').get(usersController.getAllUsers);
 
 router.route('/users/:userId').get(usersController.getUserById);
 
-router.route('/search').post(search.searchSpots);
+router.route('/search').get(search.searchSpots);
 
 router.route('/spots/:id/likes').put(secureRoute, likesController.like);
 

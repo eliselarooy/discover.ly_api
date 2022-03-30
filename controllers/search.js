@@ -1,18 +1,11 @@
 import Spot from '../models/spot.js';
 
 const searchSpots = async (req, res, next) => {
-  const searchText = req.body.text;
-  const results = [];
+  const searchText = req.query.text;
+  const regex = new RegExp(searchText, 'i'); // i for case insensitive
+
   try {
-    const spots = await Spot.find();
-    spots.filter(function (spot) {
-      if (
-        spot.description.includes(searchText) ||
-        spot.title.includes(searchText)
-      ) {
-        results.push(spot);
-      }
-    });
+    const results = await Spot.find({ title: { $regex: regex } });
 
     res.status(200).json(results);
   } catch (err) {
