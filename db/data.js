@@ -1,26 +1,30 @@
 export const usersData = [
   {
     username: 'user1',
-    profilePicture: 'src/assets/images/preset.jpg',
+    profilePicture:
+      'https://res.cloudinary.com/dj7e2jadx/image/upload/v1648223633/u5sef2zit7mwdnhlf0hl.jpg',
     email: 'user1@email.com',
     password: 'password!1',
   },
   {
     username: 'user2',
-    profilePicture: 'src/assets/images/preset.jpg',
+    profilePicture:
+      'https://res.cloudinary.com/dj7e2jadx/image/upload/v1648223633/u5sef2zit7mwdnhlf0hl.jpg',
     email: 'user2@email.com',
     password: 'password!1',
   },
   {
     username: 'user3',
-    profilePicture: 'src/assets/images/preset.jpg',
+    profilePicture:
+      'https://res.cloudinary.com/dj7e2jadx/image/upload/v1648223633/u5sef2zit7mwdnhlf0hl.jpg',
     email: 'user3@email.com',
     password: 'password!1',
   },
   {
-    username: 'user4',
-    profilePicture: 'src/assets/images/preset.jpg',
-    email: 'user4@email.com',
+    username: 'wilma',
+    profilePicture:
+      'https://res.cloudinary.com/dj7e2jadx/image/upload/v1648673023/upcsl9lsh8puwldmcwzq.jpg',
+    email: 'wilma@woof.com',
     password: 'password!1',
   },
 ];
