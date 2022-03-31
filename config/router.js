@@ -17,6 +17,10 @@ router
 router.route('/spots/users/:userId').get(spotsController.getAllSpotsForUser);
 
 router
+  .route('/spots/likes/users/:userId')
+  .get(spotsController.getLikedSpotsForUser);
+
+router
   .route('/spots/:spotId')
   .get(spotsController.getSpotById)
   .put(secureRoute, spotsController.editSpot) // users own

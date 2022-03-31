@@ -18,6 +18,15 @@ const getAllSpotsForUser = async (req, res, next) => {
   }
 };
 
+const getLikedSpotsForUser = async (req, res, next) => {
+  try {
+    const spots = await Spot.find({ likedBy: req.params.userId });
+    return res.status(200).json(spots);
+  } catch (err) {
+    next(err);
+  }
+};
+
 const getSpotById = async (req, res, next) => {
   try {
     const spot = await Spot.findById(req.params.spotId); //spotId is parameter of url (express.js)
@@ -69,4 +78,5 @@ export default {
   editSpot,
   deleteSpot,
   getAllSpotsForUser,
+  getLikedSpotsForUser,
 };
