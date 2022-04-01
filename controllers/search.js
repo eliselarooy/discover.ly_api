@@ -10,9 +10,10 @@ const searchSpots = async (req, res, next) => {
     if (searchText === '') {
       const results = await Spot.find({});
       res.status(200).json(results);
+    } else {
+      const results = await Spot.find({ $text: { $search: searchText } });
+      res.status(200).json(results);
     }
-    const results = await Spot.find({ $text: { $search: searchText } });
-    res.status(200).json(results);
   } catch (err) {
     next(err);
   }
