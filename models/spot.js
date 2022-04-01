@@ -28,5 +28,6 @@ const spotSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+spotSchema.index({ '$**': 'text' });
 
 export default mongoose.model('Spot', spotSchema);
