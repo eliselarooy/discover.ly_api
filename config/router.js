@@ -45,6 +45,8 @@ router.route('/users/:userId').get(usersController.getUserById);
 
 router.route('/search').get(search.searchSpots);
 
-router.route('/spots/:id/likes').put(secureRoute, likesController.like);
+router.route('/spots/:id/like').put(secureRoute, likesController.addLike);
+
+router.route('/spots/:id/unlike').put(secureRoute, likesController.removeLike);
 
 export default router;
