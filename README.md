@@ -70,9 +70,9 @@ const addLike = async (req, res, next) => {
 ```
 
 With enough backend functionality to meet our MVP, we moved on to the frontend. To make the registering and login process smooth and robust, we ensured that: 
-The login and register forms were easy to find 
-When a user registers, they are automatically logged and redirected to their profile page 
-Useful error messages were generated and displayed on the frontend 
+- The login and register forms were easy to find 
+- When a user registers, they are automatically logged and redirected to their profile page 
+- Useful error messages were generated and displayed on the frontend 
 
 With registering and login complete, I used conditional rendering to update the navbar depending on the logged-in state, displaying either ‘Sign up’ and ‘Log in’ when logged out or ‘Log out’, ‘Profile’ and ‘Add new spot’ after logging in. 
 
