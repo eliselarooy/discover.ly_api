@@ -1,5 +1,7 @@
 # Discover.ly - GA Project 3
 
+![homepage](./assets/homepage.png)
+
 ## Overview
 _Discover.ly_ is an app built using the MERN stack where users can discover and share outdoor spots. 
 
@@ -19,7 +21,11 @@ Build a full-stack application using MongoDB, Express, React and Node.js.
 ### Planning
 We started out by discussing our ideas for the project and discovered our shared love of the outdoors which led us to build an app to share our favourite places. We designed our wireframes and agreed upon an MVP and stretch goals. This gave us a clear plan to follow.
 
+![wireframe](./assets/wireframe.png)
+
 We used Trello to break the project down into ‘tickets’ which we kept updated throughout the project. 
+
+![trello](./assets/trello.png)
 
 We set up the initial code on GitHub and worked out the best way to use Git branches for collaborative working. Every morning, we had a standup to keep each other updated on our progress and discuss any blockers. 
 
@@ -135,10 +141,10 @@ As a team, we spent time creating a comprehensive plan using tools such as a Tre
 
 In our stretch goals, we wanted to add complex features to give extra functionality to the end-user. We managed to integrate features such as likes, maps, photo uploads, comments and animations. These features give the app a complete feel and a seamless design.
 
-## Key Learnings 
-We were really pleased with how the project turned out and I believe this was due to how well we worked as a team. It was a fantastic experience and a great opportunity to work collaboratively and maintain a shared codebase. 
-
 ## Future Improvements 
 - Allow liking spots from the main ‘Discover’ page and improve clarity by displaying an ‘empty’ heart if the user has not liked the spot and a ‘filled’ heart once liked 
 - Ordering the spots on the ‘Discover’ page by the most recently posted 
 - Add the ability for users to edit their profile page and add a bio
+
+## Key Learnings 
+We were really pleased with how the project turned out and I believe this was due to how well we worked as a team. It was a fantastic experience and a great opportunity to work collaboratively and maintain a shared codebase. 
