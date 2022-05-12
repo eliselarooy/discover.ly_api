@@ -45,7 +45,7 @@ const deleteComment = async (req, res, next) => {
 
     const savedSpot = await spot.save();
 
-    return res.status(200).send({ message: 'Comment deleted!' }, savedSpot);
+    return res.status(200).json(savedSpot);
   } catch (err) {
     next(err);
   }
