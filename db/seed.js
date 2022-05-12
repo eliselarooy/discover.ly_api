@@ -20,7 +20,7 @@ async function seed() {
         (spot.createdBy = users[Math.floor(Math.random() * users.length)]._id)
     );
 
-    // Creatings spots
+    // Creating spots
     const spots = await Spot.create(spotsData);
     console.log('Spots added to database:', spots);
 
