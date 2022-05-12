@@ -14,6 +14,8 @@ The app is deployed on Netlify and available here &rarr; https://discoverly.netl
 
 Feel free to register your own account, or you can use email `elise@email.com` and password `password!1`.
 
+This repo contains code for the backend only. The code for the frontend is [here](https://github.com/eliselarooy/discover.ly_client).
+
 ## The Brief
 Build a full-stack application using MongoDB, Express, React and Node.js.
 
