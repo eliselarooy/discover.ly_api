@@ -1,24 +1,70 @@
+<div id="top"></div>
+
 # Discover.ly - GA Project 3
 
 ![homepage](./assets/homepage.png)
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#the-brief">The Brief</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#wins">Wins</a></li>
+    <li><a href="#future-improvements">Future Improvements</a></li>
+    <li><a href="#key-learnings">Key Learnings</a></li>
+  </ol>
+</details>
+
+<!-- OVERVIEW -->
 ## Overview
 _Discover.ly_ is an app built using the MERN stack where users can discover and share outdoor spots. 
 
-> **Team members:** [Ashley Gyngell](https://github.com/ashleygyngell), [Tom Riley](https://github.com/TomCRiley) and [Elise La Rooy](https://github.com/eliselarooy) \
-> **Duration:** 7 days \
-> **Technologies:** HTML, SCSS/Bulma, JavaScript, MongoDB, Express, React, Node.js
+* **Team members:** [Ashley Gyngell](https://github.com/ashleygyngell), [Tom Riley](https://github.com/TomCRiley) and [Elise La Rooy](https://github.com/eliselarooy) 
+* **Duration:** 7 days 
 
+### Built With
+* HTML 
+* SCSS/Bulma 
+* JavaScript
+* MongoDB
+* Express
+* React
+* Node.js
+
+This repo contains code for the backend only. The code for the frontend is [here](https://github.com/eliselarooy/discover.ly_client).
+
+<!-- INSTALLATION -->
+## Installation
 The app is deployed on Netlify and available here &rarr; https://discoverly.netlify.app/ \
 [![Netlify Status](https://api.netlify.com/api/v1/badges/12a4daaa-b415-4e3b-9fa9-d917e8c03f25/deploy-status)](https://app.netlify.com/sites/discoverly/deploys)
 
 Feel free to register your own account, or you can use email `elise@email.com` and password `password!1`.
 
-This repo contains code for the backend only. The code for the frontend is [here](https://github.com/eliselarooy/discover.ly_client).
+To run the project locally:
+1. Make sure you have a local version of MongoDB running 
+2. Frontend: 
+    - Clone the [frontend](https://github.com/eliselarooy/discover.ly_client) repo
+    - Run `npm install` to install npm packages
+    - Run `npm run start:client` and open http://localhost:8001 in the browser
+3. Backend: 
+    - Clone this repo
+    - Run `npm install` to install npm packages
+    - Run `npm run seed` to populate the database with seed data
+    - Run `npm run start:server`
 
+<!-- THE BRIEF -->
 ## The Brief
 Build a full-stack application using MongoDB, Express, React and Node.js.
 
+<!-- APPROACH -->
 ## Approach
 ### Planning
 We started out by discussing our ideas for the project and discovered our shared love of the outdoors which led us to build an app to share our favourite places. We designed our wireframes and agreed upon an MVP and stretch goals. This gave us a clear plan to follow.
@@ -138,15 +184,20 @@ const spots = await Spot.create(spotsData);
 console.log('Spots added to database:', spots);
 ```
 
+<!-- WINS -->
 ## Wins
 As a team, we spent time creating a comprehensive plan using tools such as a Trello board. This was key to the completion of our project as it enabled us to focus our time more precisely and build the app incrementally to achieve all of our goals.
 
 In our stretch goals, we wanted to add complex features to give extra functionality to the end-user. We managed to integrate features such as likes, maps, photo uploads, comments and animations. These features give the app a complete feel and a seamless design.
 
+<!-- FUTURE IMPROVEMENTS -->
 ## Future Improvements 
 - Allow liking spots from the main ‘Discover’ page and improve clarity by displaying an ‘empty’ heart if the user has not liked the spot and a ‘filled’ heart once liked 
 - Ordering the spots on the ‘Discover’ page by the most recently posted 
 - Add the ability for users to edit their profile page and add a bio
 
+<!-- KEY LEARNINGS -->
 ## Key Learnings 
 We were really pleased with how the project turned out and I believe this was due to how well we worked as a team. It was a fantastic experience and a great opportunity to work collaboratively and maintain a shared codebase. 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
