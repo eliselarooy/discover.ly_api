@@ -50,15 +50,15 @@ Feel free to register your own account, or you can use email `elise@email.com` a
 
 To run the project locally:
 1. Make sure you have a local version of MongoDB running 
-2. Frontend: 
-    - Clone the [frontend](https://github.com/eliselarooy/discover.ly_client) repo
-    - Run `npm install` to install npm packages
-    - Run `npm run start:client` and open http://localhost:8001 in the browser
-3. Backend: 
+2. Backend: 
     - Clone this repo
     - Run `npm install` to install npm packages
     - Run `npm run seed` to populate the database with seed data
     - Run `npm run start:server`
+3. Frontend: 
+    - Clone the [frontend](https://github.com/eliselarooy/discover.ly_client) repo
+    - Run `npm install` to install npm packages
+    - Run `npm run start:client` and open http://localhost:8001 in the browser
 
 <!-- THE BRIEF -->
 ## The Brief
